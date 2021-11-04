@@ -1,0 +1,230 @@
+:root {
+    --fondo: #AEBEA1;
+    --encabezado: #51624F;
+    --green: #87D47F;
+    --aside: #E6D5AA;
+    --coral: #C3C29C;
+    --gap: 15px;
+  }
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+html {
+    min-height: 100vh;
+    font-size: 62.5%;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 60px 60px 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "nav nav nav nav nav"
+                         "header header header header aside"
+                         "header header header header aside"
+                         "header header header header aside"
+                         "header header header header aside";
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "titulo"
+                          "plantas";
+    background-color: var(--fondo);
+    grid-area: header;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 1px 1px 3px var(--encabezado);
+    font-size: 2rem;
+    justify-items: center;
+    align-items: top;
+    align-content: center;
+    gap: 30px;
+    padding: var(--gap);
+    position: relative;
+    overflow: hidden;
+  }
+
+ 
+  header .plantas {
+    display: grid;
+    grid-area: plantas;
+    grid-auto-flow: column;
+    position: relative;
+    justify-content: space-around;
+    gap: 15px;
+    width: 2rem;
+  }
+  
+  .plantas img {
+    width: 100px;
+  }
+
+  header .titulo {
+    display: grid;
+    grid-area: titulo;
+  }
+
+  aside {
+    display: grid;
+    font-size: small;
+    text-align: center;
+    background-color: var(--coral);
+    grid-area: aside;
+    padding: var(--gap);
+    grid-template-rows: repeat(4, max-content);
+    align-content: center;
+    gap: var(--gap);
+  }
+  
+  aside > img {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  
+  #info {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 40px;
+    box-shadow: 0px 2px 12px rgba(0,0,0,.3);
+  }
+    
+  nav {
+    display: grid; 
+    justify-items: center;
+    background-color: var(--encabezado);
+    grid-area: nav;
+    align-items: stretch;
+  }
+  
+  ul {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: calc(var(--gap) * 3);
+    align-items: center;
+  }
+  
+  li {
+    padding: 0 var(--gap);
+  }
+  
+  h1 {
+    font-weight: normal;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: var(--gap);
+  }
+  
+  a {
+    color: #92badd;
+    display:inline-block;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  @media (max-width: 950px) {
+    header {
+      font-size: 1.5rem;
+    }
+  
+    #info {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+  }
+  
+   @media (max-width: 900px) {
+    body {
+      display: grid;
+      grid-template-rows: 40px 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "nav" "header" "aside";
+    }
+  
+    #info {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+  
+    aside {
+      grid-template-rows: repeat(3, max-content);
+    }
+  
+    aside > img {
+      display: none;
+    }
+  }
+  
+  
+  /*
+  .burbujas img {
+    animation-name: burbujas-animadas;
+    animation-duration: 2s;
+    animation-fill-mode:forwards;
+    animation-iteration-count: 2;
+    transform: translateY(50vh);
+  }
+  
+  .burbujas img:nth-child(1) {
+    animation-delay: 2s;
+  }
+  
+  .burbujas img:nth-child(2) {
+    animation-delay: 6s;
+  }
+  
+  .burbujas img:nth-child(3) {
+    animation-delay: 1.6s;
+    width: 50px;
+  }
+  
+  .burbujas img:nth-child(4) {
+    animation-delay: 0.5s;
+    width: 34px;
+  }
+  
+  .burbujas img:nth-child(5) {
+    animation-delay: 1s;
+    width: 20px;
+  }
+  
+  .burbujas img:nth-child(6) {
+    animation-delay: 2s;
+  }
+  
+  .burbujas img:nth-child(7) {
+    animation-delay: 2.4s;
+    width: 100px;
+  }
+  
+  .burbujas img:nth-child(8) {
+    animation-delay: 4s;
+  }
+  
+  @keyframes burbujas-animadas {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    
+    100% {
+      transform: translateY(-1000px);
+      opacity: 1;
+    }
+  }
+  
+*/  
