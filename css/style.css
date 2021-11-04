@@ -19,10 +19,9 @@ html {
 
 body {
     display: grid;
-    grid-template-rows: 60px 60px 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "nav nav nav nav nav"
-                         "header header header header aside"
                          "header header header header aside"
                          "header header header header aside"
                          "header header header header aside";
@@ -34,36 +33,38 @@ body {
 header {
     display: grid;
     grid-template-rows: 1fr 3fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: "titulo"
-                          "plantas";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "titulo titulo titulo titulo"
+                          "plantas plantas plantas plantas";
     background-color: var(--fondo);
     grid-area: header;
     font-family: 'Pacifico', cursive;
     text-shadow: 1px 1px 3px var(--encabezado);
     font-size: 2rem;
     justify-items: center;
-    align-items: top;
-    align-content: center;
     gap: 30px;
     padding: var(--gap);
-    position: relative;
-    overflow: hidden;
   }
 
  
-  header .plantas {
-    display: grid;
-    grid-area: plantas;
+  .plantas {
     grid-auto-flow: column;
-    position: relative;
-    justify-content: space-around;
-    gap: 15px;
-    width: 2rem;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1rem;
   }
   
   .plantas img {
-    width: 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "plantas plantas plantas plantas"
+                          "plantas plantas plantas plantas";
+    grid-area: plantas;
+    width: 100%;
+    margin-top: 10px;
   }
 
   header .titulo {
@@ -82,7 +83,7 @@ header {
     align-content: center;
     gap: var(--gap);
   }
-  
+
   aside > img {
     max-width: 60%;
     margin: 0 auto;
@@ -96,7 +97,8 @@ header {
   }
     
   nav {
-    display: grid; 
+    display: grid;
+    font-size: medium; 
     justify-items: center;
     background-color: var(--encabezado);
     grid-area: nav;
@@ -131,100 +133,97 @@ header {
     font-weight: 700;
   }
   
-  @media (max-width: 950px) {
+  @media (max-width: 1000px) {
     header {
       font-size: 1.5rem;
     }
+
+    .plantas img {
+      justify-content: space-around;
+      margin: auto;
+      width: 20vh;
+      box-shadow: 0px 2px 12px white;
+    }
   
     #info {
+      display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
     }
   }
   
-   @media (max-width: 900px) {
+   @media (max-width: 949px) {
     body {
       display: grid;
-      grid-template-rows: 40px 1fr;
+      grid-template-rows: 0.1fr 1fr 0.1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "nav" "header" "aside";
     }
-  
+
+    .plantas img {
+      justify-content: space-around;
+      margin: auto;
+      width: 20vh;
+    }
     #info {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
     }
   
-    aside {
-      grid-template-rows: repeat(3, max-content);
-    }
-  
+ 
     aside > img {
       display: none;
     }
   }
-  
-  
-  /*
-  .burbujas img {
-    animation-name: burbujas-animadas;
+   
+  .plantas img:hover {
+    transform: scale(1.5);
+    box-shadow: 0px 2px 12px white;
+  }
+ 
+  .plantas img {
+    animation-name: sombra;
     animation-duration: 2s;
     animation-fill-mode:forwards;
-    animation-iteration-count: 2;
-    transform: translateY(50vh);
+    animation-iteration-count: infinite;
+
   }
-  
-  .burbujas img:nth-child(1) {
+
+  .plantas img:nth-child(1) {
     animation-delay: 2s;
   }
   
-  .burbujas img:nth-child(2) {
+  .plantas img:nth-child(2) {
     animation-delay: 6s;
   }
   
-  .burbujas img:nth-child(3) {
+  .plantas img:nth-child(3) {
     animation-delay: 1.6s;
-    width: 50px;
   }
   
-  .burbujas img:nth-child(4) {
+  .plantas img:nth-child(4) {
     animation-delay: 0.5s;
-    width: 34px;
   }
   
-  .burbujas img:nth-child(5) {
+  .plantas img:nth-child(5) {
     animation-delay: 1s;
-    width: 20px;
   }
   
-  .burbujas img:nth-child(6) {
+  .plantas img:nth-child(6) {
     animation-delay: 2s;
   }
   
-  .burbujas img:nth-child(7) {
+  .plantas img:nth-child(7) {
     animation-delay: 2.4s;
-    width: 100px;
   }
   
-  .burbujas img:nth-child(8) {
+  .plantas img:nth-child(8) {
     animation-delay: 4s;
   }
   
-  @keyframes burbujas-animadas {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    
-    100% {
-      transform: translateY(-1000px);
-      opacity: 1;
-    }
+  @keyframes sombra {
+    from {box-shadow: gold;}
+    to {box-shadow: darkgreen;}
   }
   
-*/  
+ 
