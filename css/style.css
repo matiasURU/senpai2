@@ -152,7 +152,7 @@ header {
     }
   }
   
-   @media (max-width: 949px) {
+   @media (max-width: 999px) {
     body {
       display: grid;
       grid-template-rows: 0.1fr 1fr 0.1fr;
