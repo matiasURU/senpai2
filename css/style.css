@@ -55,6 +55,7 @@ header {
     cursor: pointer;
     font-size: 1rem;
     position: relative;
+    overflow: hidden;
   }
 
   .header .plantas,
@@ -75,12 +76,17 @@ header {
     margin-top: 10px;
     border-radius: 50px;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
   }
 
   header .titulo {
     display: grid;
     grid-area: titulo;
   }
+  
+  /*
+  
   .plantas .background-hover{
     width: 100px;
     height: 100px;
@@ -91,6 +97,7 @@ header {
     border-radius: 100%;
     transition: all 300ms;
   }
+*/
 
   aside {
     display: grid;
@@ -195,7 +202,13 @@ header {
       display: none;
     }
   }
-   
+
+  .plantas:hover {
+    transform: scale(1.5);
+    left: 50px;
+  }
+
+  /*
   .plantas img:hover {
     transform: scale(1.5);
     opacity: 0.3;
@@ -207,9 +220,9 @@ header {
     height: 400px;
     opacity: 0.3;
     top: -70px;
-    left: -70px;
+    left: -90px;
   }
- 
+ */
   .plantas img {
     animation-name: sombra;
     animation-duration: 2s;
