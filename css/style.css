@@ -14,6 +14,7 @@
 
 html {
     min-height: 100vh;
+    max-height: max-content;
     font-size: 62.5%;
 }
 
@@ -26,19 +27,20 @@ body {
                          "header header header header aside"
                          "header header header header aside";
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     min-height: 100vh;
 }
 
 header {
     display: grid;
-    grid-template-rows: 1fr 3fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "titulo titulo titulo titulo"
-                          "plantas plantas plantas plantas";
+    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo"
+                          "plantas plantas"
+                          "plantas plantas";
     background-color: var(--fondo);
     grid-area: header;
-    font-family: 'Pacifico', cursive;
+    font-family: Arial, Helvetica, sans-serif;
     text-shadow: 1px 1px 3px var(--encabezado);
     font-size: 2rem;
     justify-items: center;
@@ -49,59 +51,47 @@ header {
  
   .plantas {
     grid-auto-flow: column;
-    margin: 2px;
-    margin-top: -130px;
+    margin-top: -35%;
     padding: 2px;
     text-align: center;
     cursor: pointer;
     font-size: 1rem;
-    position: relative;
   }
 
   .header .plantas,
+  .plantas img,
   .plantas h2,
   .plantas p{
     position: relative;
     z-index: 1;
+    transition: all 200ms;
   }
 
   p {
     font-size: 14px;
     opacity: 0;
+    transform: translateY(-1000px);
   }
 
   
   .plantas img {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "plantas plantas plantas plantas"
-                          "plantas plantas plantas plantas";
+    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "plantas plantas"
+                          "plantas plantas"
+                          "plantas plantas";
     grid-area: plantas;
-    width: 100%;
-    margin-top: 10px;
+    width: 70%;
+    margin-top: 50px;
     border-radius: 50px;
-    overflow: hidden;
+    margin-bottom: 20px;
   }
 
   header .titulo {
     display: grid;
     grid-area: titulo;
   }
-  
-  /*
-  
-  .plantas .background-hover{
-    width: 100px;
-    height: 100px;
-    background: red;
-    position: absolute;
-    top: 250px;
-    left: -170px;
-    border-radius: 100%;
-    transition: all 300ms;
-  }
-*/
 
   aside {
     display: grid;
@@ -116,8 +106,8 @@ header {
   }
 
   aside > img {
-    max-width: 60%;
-    margin: 0 auto;
+    max-width: 70%;
+    margin: auto;
   }
   
   #info {
@@ -130,48 +120,60 @@ header {
   nav {
     display: grid;
     font-size: medium; 
-    justify-items: center;
+    text-align: center;
     background-color: var(--encabezado);
     grid-area: nav;
-    align-items: stretch;
-  }
-  
-  ul {
-    list-style: none;
-    display: grid;
-    grid-auto-flow: column;
-    gap: calc(var(--gap) * 3);
-    align-items: center;
-  }
-  
-  li {
-    padding: 0 var(--gap);
   }
   
   h1 {
-    font-weight: normal;
     text-align: center;
+    padding: 20px;
   }
   
   h2 {
-    margin-bottom: var(--gap);
+    margin-top: auto;
   }
   
   a {
     color: #92badd;
-    display:inline-block;
     text-decoration: none;
     font-weight: 700;
+    padding: calc(var(--gap) * 3);
   }
   
+  .plantas:hover img {
+    box-shadow: 2px 2px 12px white;
+    transform: scale(1.3);
+    left: 15%;
+  }
+
+  .plantas:hover img ~ p {
+    bottom: -800px;
+    position: relative;
+    z-index: 2;
+    background-color: green; opacity: 0.7;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    left: 6%;
+    width: 400px;
+    padding: 10px;
+  }
+
   @media (max-width: 1000px) {
     header {
       font-size: 1.5rem;
     }
+    
+    body {
+      display: grid;
+      grid-template-rows: 0.1fr 1fr 0.1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "nav" "header" "aside";
+    }
 
     .plantas img {
       justify-content: space-around;
-      margin: auto;
+      margin: 15%;
       width: 20vh;
       box-shadow: 0px 2px 12px white;
     }
@@ -180,7 +182,11 @@ header {
       display: grid;
       align-content: center;
       text-align: center;
-      bottom: 0px;
+      bottom: 0;
+    }
+
+    aside > img {
+    display: none;
     }
   }
   
@@ -194,9 +200,10 @@ header {
 
     .plantas img {
       justify-content: space-around;
-      margin: auto;
+      margin: 15%;
       width: 20vh;
     }
+
     aside {
       display: grid;
       align-content: center;
@@ -204,7 +211,7 @@ header {
       justify-content: space-around;
       margin: 0%;
       position: relative;
-      bottom: 0px;
+      bottom: 0;
     }
   
  
@@ -213,29 +220,7 @@ header {
     }
   }
 
-  .plantas img:hover {
-    transform: scale(1.5);
-    left: 50px;
-    top: 50px;
-    position: relative;
-    z-index: 2;
-  }
-
   /*
-  .plantas img:hover {
-    transform: scale(1.5);
-    opacity: 0.3;
-    box-shadow: 0px 2px 12px white;
-  }
-
-  .plantas:hover .background-hover{
-    width: 400px;
-    height: 400px;
-    opacity: 0.3;
-    top: -70px;
-    left: -90px;
-  }
- */
   .plantas img {
     animation-name: sombra;
     animation-duration: 2s;
@@ -280,5 +265,3 @@ header {
     from {box-shadow: gold;}
     to {box-shadow: darkgreen;}
   }
-  
- 
