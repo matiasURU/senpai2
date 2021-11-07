@@ -43,7 +43,7 @@ body {
 p {
   font-size: 14px;
   opacity: 0;
-  transform: translateY(-1500px);
+  transform: translateY(-2000px);
 }
 
 header {
@@ -81,9 +81,11 @@ header {
                           "plantas plantas"
                           "plantas plantas";
     grid-area: plantas;
-    width: 70%;
+    height: 80%;
+    width: 80%;
     border-radius: 50px;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
+    object-fit: cover;
   }
 
   aside {
@@ -142,10 +144,10 @@ header {
   }
 
   .plantas:hover img ~ p {
-    bottom: -1300px;
+    bottom: -1800px;
     position: relative;
     z-index: 2;
-    background-color: green; opacity: 0.7;
+    background-color: green; opacity: 0.8;
     font-size: 1.5rem;
     border-radius: 10px;
     left: 15%;
