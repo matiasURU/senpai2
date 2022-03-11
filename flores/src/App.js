@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="titulo">
+      <>
       <header className="App-header">
+        <div className="titulo">
         <h1>Especies de la flora nativa de Uruguay</h1>
+        </div>
         <div class="plantas">
           <img src=".\assets\img\chirca de monte.jpg" alt="chirca de monte en flor" img />
           <h2>Chirca de monte</h2>
@@ -52,15 +53,7 @@ function App() {
           <a target="_blank" href="https://senpaiacademy.com/uy/">Senpai Academy</a>
         </div>
       </nav>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </div >
+    </>
   );
 }
 
