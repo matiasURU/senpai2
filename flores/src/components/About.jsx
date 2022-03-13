@@ -5,9 +5,13 @@ export default function About() {
     return (
         <React.Fragment>
             <header>
-                <div className="titulo">
-                    <h1>Especies de la flora nativa de Uruguay</h1>
-                </div>
+                <div className="about">
+            <img src="assets\img\about.png" alt="Senpay Academy"/>
+            <h2>Sobre el instituto</h2>
+            <div className="descripcion">
+            <h3>Desde el primer día, Senpai fue una institución educativa que intentó romper paradigmas y diferenciarse de instituciones más tradicionales. Hacemos foco en tecnología, innovación, cambio, el futuro y las grandes cosas que pueden llevarse a cabo por las humanidad si nos convertimos en la mejor versión de nosotros mismos.</h3>
+            </div>
+        </div>
             </header>
             <aside>
                 <img src="assets/img/Wikipedia-logo.svg" alt="wikipedia logo" />

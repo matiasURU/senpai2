@@ -166,6 +166,16 @@ a:hover {
   border-radius: 70%;
 }
 
+.about {
+  padding: 2rem;
+  margin-right: 30%;
+}
+
+.descripcion {
+  font-size: 1.8rem;
+  margin: 2rem;
+}
+
 @media (max-width: 1000px) {
   header {
     font-size: 1.5rem;
