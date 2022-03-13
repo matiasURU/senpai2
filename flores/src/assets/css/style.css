@@ -187,8 +187,6 @@ a:hover {
 
   aside {
     display: grid;
-    align-content: center;
-    text-align: center;
     bottom: 0;
   }
 

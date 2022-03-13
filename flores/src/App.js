@@ -1,4 +1,4 @@
-import './App.css';
+import './assets/css/style.css';
 import Flores from './components/Flores';
 
 function App() {
