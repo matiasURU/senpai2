@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import '../assets/css/style.css';
 
 export default function Flores() {
   return (
@@ -48,9 +50,9 @@ export default function Flores() {
     </aside>
     <nav>
         <div>
-            <a href="/">Inicio</a>
-            <a target="_blank" href="https://senpaiacademy.com/uy/cursos/programacion/full-stack-developer/">Full Stack Developer</a>
-            <a target="_blank" href="https://senpaiacademy.com/uy/">Senpai Academy</a>
+            <Link to="/"> Home</Link>
+            <Link to="/about"> About</Link>
+            <a rel="noreferrer" target="_blank" href="https://senpaiacademy.com/uy/">Senpai Academy</a>
         </div>
     </nav>
       </React.Fragment>
