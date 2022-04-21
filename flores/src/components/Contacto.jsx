@@ -1,22 +1,34 @@
-import React, {useState, useEffect} from "react";
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const Lifecycle = () => {
-  const [success, setSuccess] = useState ();
+const Contacto = () => {
+  const [success, setSuccess] = useState();
 
-  useEffect (() => {
-    console.log('Se ha enviado un mensaje');
-  })
+  useEffect(() => {
+    console.log("Se ha enviado un mensaje");
+  }, [success]);
 
   return (
     <React.Fragment>
       <header>
-        <div>
-        <h1> {success}</h1>
-      <button onClick={() => setSuccess('Mensaje enviado')}>
-        Enviar mensaje
-      </button>
-        </div>
+        <form>
+          <div>
+            <label htmlFor="name">Nombre </label>
+            <input name="name" id="name" type="text" />
+
+            <label htmlFor="email">Correo electrónico </label>
+            <input name="email" id="email" type="email" />
+
+            <label htmlFor="about">Escribe tu consulta </label>
+            <textarea id="about" name="about" />
+
+            <button onClick={() => setSuccess("Mensaje enviado")}>
+              Enviar mensaje
+            </button>
+            <span></span>
+            <span> {success} </span>
+          </div>
+        </form>
       </header>
       <aside>
         <img src="assets/img/Wikipedia-logo.svg" alt="wikipedia logo" />
@@ -37,7 +49,6 @@ const Lifecycle = () => {
           <Link to="/"> Home</Link>
           <Link to="/about"> About</Link>
           <Link to="/contacto"> Contacto</Link>
-          <Link to="/contactos"> Contacto</Link>
           <a
             rel="noreferrer"
             target="_blank"
@@ -51,4 +62,4 @@ const Lifecycle = () => {
   );
 };
 
-export default Lifecycle;
+export default Contacto;

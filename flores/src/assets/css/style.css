@@ -187,6 +187,17 @@ form input {
     margin-bottom: 10px;
 }
 
+form textarea {
+    width: 200px;
+    height: 100px;
+}
+
+header button {
+    margin-top: 20px;
+    padding: 5px;
+    border-color: aqua;
+}
+
 @media (max-width: 1000px) {
     header {
         font-size: 1.5rem;
